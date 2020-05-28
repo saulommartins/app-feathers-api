@@ -16,8 +16,21 @@ export default function (app: Application) {
       type: DataTypes.STRING,
       allowNull: false
     },
-  
-  
+    createdAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      field: "created_at"
+    },
+    updatedAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      field: "updated_at"
+    },
+    deletedAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      field: "deleted_at"
+    }
   }, {
     hooks: {
       beforeCount(options: any) {

@@ -28,5 +28,5 @@
       "passwordField": "password"
     }
   },
-  "postgres": "postgres://postgres:@localhost:5432/app_feathers_api"
+  "postgres": "postgres://postgres:feathersapi@localhost:5432/app-feathers-api"
 }
