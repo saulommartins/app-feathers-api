@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  app-feathers-api:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: "feathersapi"
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./data:/var/lib/postgresql/data 
+    networks:
+      - app-feathers-network
+      
+  teste-pgadmin-compose:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "saulommartins@gmail.com"
+      PGADMIN_DEFAULT_PASSWORD: "feathersapi"
+    ports:
+      - "16543:80"
+    depends_on:
+      - app-feathers-api
+    networks:
+      - app-feathers-network
+
+networks: 
+  app-feathers-network:
+    driver: bridge
